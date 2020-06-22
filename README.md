@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Running the Project](#Running the Project)
+* [Running the Project](#Running_the_Project)
 * [index.html](#Index.html)
 * [app.js](#app.js)
 
