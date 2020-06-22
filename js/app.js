@@ -23,19 +23,6 @@ const firstSection = document.querySelector('#section1');
 const secondSection = document.querySelector('#section2');
 const thirdSection = document.querySelector('#section3');
 
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
 // build the nav
 function createNavLinks() {
     for (const section of allSections) {
@@ -53,7 +40,22 @@ function createNavLinks() {
 }
 
 // Add class 'active' to section when near top of viewport
-
+document.addEventListener("scroll", function makeSectionActive () {
+    let position = window.scrollY;
+    if (position === firstSection.offsetTop) {
+        firstSection.classList.add("your-active-class");
+        secondSection.classList.remove("your-active-class");
+        thirdSection.classList.remove("your-active-class");
+    } else if (position === secondSection.offsetTop) {
+        firstSection.classList.remove("your-active-class");
+        secondSection.classList.add("your-active-class");
+        thirdSection.classList.remove("your-active-class");
+    } else if (position === thirdSection.offsetTop) {
+        firstSection.classList.remove("your-active-class");
+        secondSection.classList.remove("your-active-class");
+        thirdSection.classList.add("your-active-class");
+    }
+});
 
 // Scroll to anchor ID using scrollTO event
 navigationBar.addEventListener("click", function scroll_down_to(event){
@@ -82,7 +84,4 @@ navigationBar.addEventListener("click", function scroll_down_to(event){
 
 // Build menu 
 createNavLinks();
-
-// Set sections as active
-
 
