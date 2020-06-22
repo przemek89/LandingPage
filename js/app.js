@@ -22,6 +22,7 @@ const navigationBar = document.querySelector('#navbar__list');
 const firstSection = document.querySelector('#section1');
 const secondSection = document.querySelector('#section2');
 const thirdSection = document.querySelector('#section3');
+const fourthSection = document.querySelector('#section4');
 
 // build the nav
 function createNavLinks() {
@@ -46,14 +47,22 @@ document.addEventListener("scroll", function makeSectionActive () {
         firstSection.classList.add("your-active-class");
         secondSection.classList.remove("your-active-class");
         thirdSection.classList.remove("your-active-class");
+        fourthSection.classList.remove("your-active-class");
     } else if (position === secondSection.offsetTop) {
         firstSection.classList.remove("your-active-class");
         secondSection.classList.add("your-active-class");
         thirdSection.classList.remove("your-active-class");
+        fourthSection.classList.remove("your-active-class");
     } else if (position === thirdSection.offsetTop) {
         firstSection.classList.remove("your-active-class");
         secondSection.classList.remove("your-active-class");
         thirdSection.classList.add("your-active-class");
+        fourthSection.classList.remove("your-active-class");
+    } else if (position === fourthSection.offsetTop) {
+        firstSection.classList.remove("your-active-class");
+        secondSection.classList.remove("your-active-class");
+        thirdSection.classList.remove("your-active-class");
+        fourthSection.classList.add("your-active-class");
     }
 });
 
@@ -69,6 +78,9 @@ navigationBar.addEventListener("click", function scroll_down_to(event){
                 break;
             case "Section 3":
                 window.scrollTo(0, thirdSection.offsetTop);
+                break;
+            case "Section 4":
+                window.scrollTo(0, fourthSection.offsetTop);
                 break;
             default:
                 break;
