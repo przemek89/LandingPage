@@ -19,6 +19,9 @@
 */
 const allSections = document.querySelectorAll('section');
 const navigationBar = document.querySelector('#navbar__list');
+const firstSection = document.querySelector('#section1');
+const secondSection = document.querySelector('#section2');
+const thirdSection = document.querySelector('#section3');
 
 /**
  * End Global Variables
@@ -53,7 +56,23 @@ function createNavLinks() {
 
 
 // Scroll to anchor ID using scrollTO event
-
+navigationBar.addEventListener("click", function scroll_down_to(event){
+    if (event.target.nodeName === "LI") {
+        switch (event.target.innerText) {
+            case "Section 1":
+                window.scrollTo(0, firstSection.offsetTop);
+                break;
+            case "Section 2":
+                window.scrollTo(0, secondSection.offsetTop);
+                break;
+            case "Section 3":
+                window.scrollTo(0, thirdSection.offsetTop);
+                break;
+            default:
+                break;
+        }
+    }
+});
 
 /**
  * End Main Functions
@@ -63,8 +82,6 @@ function createNavLinks() {
 
 // Build menu 
 createNavLinks();
-
-// Scroll to section on link click
 
 // Set sections as active
 
